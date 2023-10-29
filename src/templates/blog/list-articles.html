@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+
+
+{% block title %}
+    <title>Articles</title>
+{% endblock title %}
+
+
+
+
+{% block content %}
+
+        <h1> Liste Article</h1>
+    
+        {% for post in posts %}
+          <article>
+            <a href="{% url 'article' slug=post.slug %}">
+                <h2> {{post.title}} </h2>
+            </a>    
+     
+            <h5> {{post.publier}} </h5>
+       
+            <p> {{post.content|truncatewords:70}} </p>
+          </article>
+                
+        {% endfor %}
+
+        
+{% endblock content %}
+    
+    

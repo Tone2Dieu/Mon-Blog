@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    {% block title %}
+        <title>Base</title>
+    {% endblock title %}
+        
+</head>
+<body class="{{homeImage}}">
+
+    <header>
+        <div class="head">
+            <h1>Article de programmation</h1>
+        </div>
+        <nav>
+            <p><a href="{% url 'home' %}">Home</a></p>
+            <p><a href="{% url 'articles' %}">Articles</a></p>
+            <p><a href="{% url 'new-article' %}">New Article</a></p>
+        </nav>
+    </header>
+
+    
+    <section>
+        {% block content %}
+        
+        {% endblock content %}
+    </section>
+        
+    
+</body>
+</html>
